@@ -1,0 +1,48 @@
+{
+  "name": "verdaccio-group-htpasswd",
+  "version": "0.1.5",
+  "description": "Custom auth plugin",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@verdaccio/commons-api": "^9.6.1",
+    "@verdaccio/file-locking": "^10.0.0",
+    "apache-md5": "^1.1.5",
+    "bcryptjs": "^2.4.3",
+    "unix-crypt-td-js": "^1.1.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/jest": "^24.0.21",
+    "@types/node": "^12.20.13",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@verdaccio/babel-preset": "^9.6.1",
+    "@verdaccio/eslint-config": "^9.3.2",
+    "@verdaccio/types": "^9.5.0",
+    "eslint": "^6.6.0",
+    "jest": "^26.0.1 ",
+    "prettier": "^1.19.1",
+    "standard-version": "^8.0.0",
+    "typescript": "^3.9.5"
+  },
+  "keywords": [
+    "verdaccio,plugin,verdaccio-auth"
+  ],
+  "license": "MIT",
+  "repository": "deeputkarsh/ud-auth",
+  "author": "Utkarsh Deep <utkarshdeep@outlook.com>",
+  "scripts": {
+    "release": "standard-version -a -s",
+    "build": "npm run build:types && npm run build:js",
+    "build:js": "babel src/ --out-dir lib --extensions \".ts,.tsx\"",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "jest",
+    "lint": "eslint \"**/*.{js,ts}\""
+  }
+}
